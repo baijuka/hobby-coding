@@ -15,5 +15,7 @@ def projects(request):
 def project(request, pk):
 
     projectObject = Project.objects.get(id=pk)
-
-    return render(request, 'projects/single-project.html', {'project':projectObject})
+    tags = projectObject.tags.all()
+    reviews = projectObject.review_set.all()
+    context = {'project':projectObject, 'tags':tags, 'reviews':reviews}
+    return render(request, 'projects/single-project.html', context)

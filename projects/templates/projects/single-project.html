@@ -3,6 +3,13 @@
 {% block content %}
 
 <h1>{{ project.title }}</h1>
+{% for tag in tags %}
+    <span style="border: 1px solid; border-radius: 5px; background-color: rgb(233, 240, 240);">{{ tag }}</span>
+{% endfor %}
 <p>{{ project.description }}</p>
+
+{% for review in reviews %}
+    <p>{{ review.body }}</p>
+{% endfor %}
 
 {% endblock %}
