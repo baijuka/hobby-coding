@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <h1>Add your project here</h1>
+    {% for field in form %}
+    <div>
+        {{ field.label }}
+        {{ field}}
+    </div>
+    {% endfor %}
+    <input type="submit" value="Submit">
+</form>
+{% endblock %}
