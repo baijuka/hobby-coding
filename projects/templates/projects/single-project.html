@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 
+<img style="max-width: 500px;" src="{{ project.imageURL }}" alt="">
 <h1>{{ project.title }}</h1>
 {% for tag in tags %}
     <span style="border: 1px solid; border-radius: 5px; background-color: rgb(233, 240, 240);">{{ tag }}</span>
